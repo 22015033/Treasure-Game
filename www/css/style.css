@@ -1,0 +1,38 @@
+body {
+    background-image: url("../images/back_normal.png");
+    background-size: 100%; 
+    background-repeat: no-repeat;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+.box {
+	margin: 10px;
+    width: 30%;
+}
+.box1 {
+	margin: 10px;
+    width: 30%;
+    transform: rotate(-90deg);
+}
+.box2 {
+	margin: 10px;
+    width: 30%;
+    transform: rotate(90deg);
+}
+#result-msg {
+	font-size: 34px;
+  margin-top: -12%;
+}
+#result-msg2{
+	font-size: 35px;
+  margin-top: 35%;
+}
+#result-img {
+    width: 70%;
+    margin-top: 15%;
+}
+#result-img2 {
+    width: 99%;
+    margin-top: -80%;
+}

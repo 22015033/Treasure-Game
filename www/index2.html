@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <link rel="stylesheet" href="components/loader.css">
+    <script src="components/loader.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+       function showAnswer(choiceNo) {
+        //当たりの番号をランダムに設定
+        var luckyNumber = Math.ceil(Math.random() * 2);
+
+        //当たりの場合とはずれの場合で結果を変える
+        if(luckyNumber == choiceNo) {
+          document.getElementById("result-msg2").innerHTML = "GAME CLEAR!";
+          document.getElementById("result-msg2").style.color = "black"
+          document.getElementById("result-msg").innerHTML = "GAME CLEAR!";
+          document.getElementById("result-msg").style.color = "white"
+          document.getElementById("result-msg3").innerHTML = "宝箱を見つけました！";
+          document.getElementById("result-msg3").style.color = "black"
+          document.getElementById("result-img").src = "images/box_treasure.png";
+          document.body.style.backgroundImage = "url('images/back_red.png')";
+        } else {
+          document.getElementById("result-msg2").innerHTML = "GAME OVER!";
+          document.getElementById("result-msg2").style.color = "white"
+          document.getElementById("result-msg").innerHTML = "GAME OVER!";
+          document.getElementById("result-msg").style.color = "red"
+          document.getElementById("result-msg3").innerHTML = "罠にかかってしまいました！";
+          document.getElementById("result-msg3").style.color = "white"
+          document.getElementById("result-img2").src = "images/ti-kakou.png";
+          document.getElementById("result-img").src = "images/torappu.png";
+          document.body.style.background = "black";
+        }
+
+        //選択画面を非表示に、結果画面を表示状態に切り替える
+        document.getElementById("select-page").style.display = "none";
+        document.getElementById("result-page").style.display = "block";
+      }
+    </script>
+</head>
+<body>
+  <!-- 選択画面 -->
+    <div id="select-page" style="display:block">
+        <h1>迷宮宝探しゲーム</h1>
+        <h2>二つ目の<br>分かれ道に出ました<h2>
+        <h2>進みたい道を選んでください。</h2>
+        <br>
+        <img src="images/yajirusi2.png" class="box1" onclick="showAnswer(2)">
+        <img src="images/yajirusi2.png" class="box2" onclick="showAnswer(3)"><br>
+    </div>
+
+    <!-- 結果画面 -->
+    <div id="result-page" style="display:none">
+        <div id="result-msg2"></div>
+        <div id="result-msg"></div>
+        <h2 id="result-msg3"></h2>
+        <img id="result-img" src="">
+        <img id="result-img2" src="">
+    </div>
+</body>
+</html>
